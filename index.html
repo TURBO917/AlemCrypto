@@ -23,7 +23,7 @@ body{
   overflow-x:hidden;
 }
 
-/* Background */
+/* Animated background */
 body::before{
   content:"";
   position:fixed;
@@ -71,20 +71,22 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:20px 5%;
+  padding:16px 6%;
   z-index:3;
+  background:rgba(10,10,21,0.6);
+  backdrop-filter:blur(6px);
 }
 
 .logo{
   font-family:'Audiowide', cursive;
-  font-size:30px;
+  font-size:28px;
   color:var(--neon);
   text-shadow:0 0 8px rgba(0,255,255,.6);
 }
 
 nav{
   display:flex;
-  gap:30px;
+  gap:24px;
 }
 nav a{
   font-family:Tahoma, sans-serif;
@@ -97,7 +99,7 @@ nav a::after{
   content:"";
   position:absolute;
   left:0;
-  bottom:-5px;
+  bottom:-4px;
   width:0%;
   height:2px;
   background:var(--pink);
@@ -112,14 +114,14 @@ nav a:hover{color:var(--neon)}
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:0 10%;
-  margin-top:80px;
-  gap:50px;
+  padding:0 8%;
+  margin-top:70px;
+  gap:30px;
 }
 
 /* Text block */
 .hero-text{
-  max-width:600px;
+  max-width:560px;
   animation:fadeUp 1.2s ease forwards;
 }
 @keyframes fadeUp{
@@ -129,7 +131,7 @@ nav a:hover{color:var(--neon)}
 
 .welcome{
   font-family:'Audiowide', cursive;
-  font-size:44px;
+  font-size:40px;
   background:linear-gradient(90deg,var(--neon),var(--pink));
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
@@ -137,17 +139,17 @@ nav a:hover{color:var(--neon)}
 }
 
 .text-box{
-  margin-top:25px;
+  margin-top:12px;
   font-family:Tahoma, sans-serif;
   font-size:18px;
   opacity:.85;
-  line-height:1.6;
+  line-height:1.5;
 }
 
 /* Avatar IMAGE */
 .avatar{
-  width:240px;
-  height:240px;
+  width:220px;
+  height:220px;
   border-radius:50%;
   object-fit:cover;
   animation:float 6s ease-in-out infinite;
@@ -158,40 +160,43 @@ nav a:hover{color:var(--neon)}
   100%{transform:translateY(0)}
 }
 
-/* Mobile */
+/* Mobile menu */
 .menu-toggle{
   display:none;
   flex-direction:column;
   cursor:pointer;
-  width:30px;
-  height:22px;
+  width:28px;
+  height:20px;
   justify-content:space-between;
 }
 .menu-toggle span{
-  height:4px;
+  height:3px;
   background:var(--text);
   border-radius:2px;
 }
 
+/* Responsive */
 @media(max-width:900px){
   .hero{
     flex-direction:column-reverse;
     text-align:center;
+    gap:15px;
+    padding:0 5%;
   }
-  .welcome{font-size:34px;}
-  .avatar{width:180px;height:180px;}
+  .welcome{font-size:30px;}
+  .avatar{width:160px;height:160px;}
 }
 
 @media(max-width:768px){
   .logo{font-size:22px;}
   nav{
     position:fixed;
-    top:70px;
+    top:60px;
     right:-220px;
     background:rgba(10,10,21,.95);
     flex-direction:column;
-    gap:20px;
-    padding:20px;
+    gap:18px;
+    padding:18px;
     transition:.3s;
   }
   nav.active{right:0}
@@ -222,7 +227,6 @@ nav a:hover{color:var(--neon)}
     </div>
   </div>
 
-  <!-- REAL IMAGE -->
   <img src="img/Ava2.png" alt="Avatar" class="avatar">
 </div>
 
@@ -230,7 +234,7 @@ nav a:hover{color:var(--neon)}
 
 <script>
 const container=document.querySelector('.particles');
-for(let i=0;i<50;i++){
+for(let i=0;i<40;i++){
   const p=document.createElement('div');
   p.classList.add('particle');
   p.style.left=Math.random()*100+'vw';
