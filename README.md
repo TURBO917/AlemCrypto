@@ -1,3 +1,4 @@
+Я сломал сайт, долбанный чат ДЖПИТИ!!!
 Welcome to a futuristic digital space where technology meets creativity. 🧠💻
 
 This one-page interactive portfolio is built as an immersive cyberpunk interface, centered around a bold neon-inspired visual concept.
