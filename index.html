@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
   --bg:#0a0a15;
   --neon:#0ff;
@@ -18,6 +19,7 @@
 
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
+
 body{
   background:var(--bg);
   color:var(--text);
@@ -26,6 +28,7 @@ body{
 }
 
 /* Background grid */
+
 body::before{
   content:"";
   position:fixed;
@@ -37,22 +40,29 @@ body::before{
   animation:bgMove 40s linear infinite;
   z-index:-2;
 }
-@keyframes bgMove{to{transform:translate(60px,60px);}}
+
+@keyframes bgMove{
+  to{transform:translate(60px,60px);}
+}
 
 /* Particles */
+
 .particles{
   position:fixed;
   inset:0;
   pointer-events:none;
   z-index:-1;
 }
+
 .particle{
   position:absolute;
-  width:2px;height:2px;
+  width:2px;
+  height:2px;
   border-radius:50%;
   opacity:.5;
   animation:fall linear infinite;
 }
+
 @keyframes fall{
   from{transform:translateY(-5px);opacity:0}
   50%{opacity:.5}
@@ -60,9 +70,11 @@ body::before{
 }
 
 /* Header */
+
 header{
   position:fixed;
-  top:0;width:100%;
+  top:0;
+  width:100%;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -71,41 +83,51 @@ header{
   backdrop-filter:blur(6px);
   z-index:10;
 }
+
 .logo{
   font-family:'Audiowide',cursive;
   font-size:24px;
   color:var(--neon);
   text-shadow:0 0 8px rgba(0,255,255,.6);
 }
+
 nav{
   display:flex;
   gap:18px;
 }
+
 nav a{
   color:var(--text);
   text-decoration:none;
   font-weight:600;
   position:relative;
 }
+
 nav a::after{
   content:"";
   position:absolute;
-  left:0;bottom:-3px;
-  width:0;height:2px;
+  left:0;
+  bottom:-3px;
+  width:0;
+  height:2px;
   background:var(--pink);
   transition:.3s;
 }
+
 nav a:hover{color:var(--neon)}
 nav a:hover::after{width:100%}
 
 /* Mobile menu */
+
 .menu-toggle{
   display:none;
   flex-direction:column;
-  width:26px;height:18px;
+  width:26px;
+  height:18px;
   justify-content:space-between;
   cursor:pointer;
 }
+
 .menu-toggle span{
   height:3px;
   background:var(--text);
@@ -113,6 +135,7 @@ nav a:hover::after{width:100%}
 }
 
 /* Hero */
+
 .hero{
   min-height:100vh;
   display:flex;
@@ -121,8 +144,16 @@ nav a:hover::after{width:100%}
   padding:90px 8% 40px;
   gap:25px;
 }
-.hero-text{max-width:520px;animation:fadeUp 1s ease forwards;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(15px)}to{opacity:1}}
+
+.hero-text{
+  max-width:520px;
+  animation:fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(15px)}
+  to{opacity:1}
+}
 
 .welcome{
   font-family:'Audiowide',cursive;
@@ -133,115 +164,233 @@ nav a:hover::after{width:100%}
   margin-bottom:10px;
 }
 
-.text-box p, .text-box li{
-  font-size:16px;
-  line-height:1.5;
-  opacity:.9;
+/* INFO CARDS */
+
+.text-box{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:10px;
 }
-.text-box ul{padding-left:18px;margin:6px 0 12px;}
-.text-box strong{color:var(--neon)}
+
+.info-card{
+  padding:14px 16px;
+  border-radius:10px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(0,255,255,0.15);
+  backdrop-filter:blur(6px);
+  transition:.3s;
+  animation:cardFade .8s ease forwards;
+  opacity:0;
+}
+
+.info-card:nth-child(1){animation-delay:.2s}
+.info-card:nth-child(2){animation-delay:.35s}
+.info-card:nth-child(3){animation-delay:.5s}
+.info-card:nth-child(4){animation-delay:.65s}
+
+.info-card:hover{
+  border-color:var(--pink);
+  transform:translateY(-3px);
+}
+
+.info-title{
+  font-weight:600;
+  color:var(--neon);
+  margin-bottom:6px;
+  letter-spacing:.5px;
+}
+
+.info-item{
+  font-size:15px;
+  opacity:.85;
+  padding-left:10px;
+  position:relative;
+  margin:4px 0;
+}
+
+.info-item::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:8px;
+  width:4px;
+  height:4px;
+  background:var(--pink);
+  border-radius:50%;
+}
+
+.mission{
+  font-style:italic;
+  opacity:.85;
+}
+
+@keyframes cardFade{
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* Avatar */
 
 .avatar{
-  width:200px;height:200px;
+  width:200px;
+  height:200px;
   border-radius:50%;
   object-fit:cover;
   animation:float 6s ease-in-out infinite;
 }
+
 @keyframes float{
   50%{transform:translateY(-10px)}
 }
 
 /* Responsive */
+
 @media(max-width:900px){
-  .hero{flex-direction:column-reverse;text-align:center}
-  .avatar{width:150px;height:150px}
+  .hero{
+    flex-direction:column-reverse;
+    text-align:center;
+  }
+
+  .avatar{
+    width:150px;
+    height:150px;
+  }
 }
+
 @media(max-width:768px){
+
   nav{
     position:fixed;
-    top:60px;right:-220px;
+    top:60px;
+    right:-220px;
     background:rgba(10,10,21,.95);
     flex-direction:column;
     padding:15px;
     transition:.3s;
   }
+
   nav.active{right:0}
+
   .menu-toggle{display:flex}
+
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">Alem.Crypto</div>
-  <div class="menu-toggle" id="menu-toggle">
-    <span></span><span></span><span></span>
-  </div>
-  <nav id="nav">
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Projects</a>
-    <a href="#">Contacts</a>
-  </nav>
+
+<div class="logo">Alem.Crypto</div>
+
+<div class="menu-toggle" id="menu-toggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<nav id="nav">
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Projects</a>
+<a href="#">Contacts</a>
+</nav>
+
 </header>
 
 <section class="hero">
-  <div class="hero-text">
-    <h1 class="welcome">Welcome To My Portfolio</h1>
+
+<div class="hero-text">
+
+<h1 class="welcome">Welcome To My Portfolio</h1>
+
 <div class="text-box">
-  <p><strong>🚀 Crypto Investor & Web3 Enthusiast</strong></p>
-  <p>
-    I explore early-stage blockchain projects, participate in testnets, 
-    and track promising airdrops across the Web3 ecosystem.
-  </p>
-  <p><strong>📊 What I Do</strong></p>
 
-  <p>🧪 Participate in testnets and hunt for airdrops</p>
-  <p>💰 Invest in early-stage crypto projects</p>
-  <p>📈 Manage and grow my crypto portfolio</p>
-  <p>🔎 Research blockchain protocols and ecosystems</p>
+<div class="info-card">
+<div class="info-title">Crypto Investor & Web3 Enthusiast</div>
+<p>
+Exploring early-stage blockchain projects, participating in testnets
+and discovering promising airdrops across the Web3 ecosystem.
+</p>
+</div>
 
-  <p><strong>✍️ Content</strong></p>
+<div class="info-card">
+<div class="info-title">What I Do</div>
 
-  <p>📝 Create crypto blog posts and social content</p>
-  <p>📚 Write project reviews and articles</p>
-  <p>🎓 Share educational Web3 insights</p>
+<div class="info-item">Testnets and airdrop participation</div>
+<div class="info-item">Early-stage crypto investments</div>
+<div class="info-item">Portfolio strategy and management</div>
+<div class="info-item">Protocol and ecosystem research</div>
 
-  <p><strong>🌐 Mission</strong></p>
+</div>
 
-  <p>
-    Stay ahead of crypto trends, explore innovative technologies, 
-    and build long-term value in the Web3 ecosystem.
-  </p>
-     </div>
-    
-  </div>
+<div class="info-card">
+<div class="info-title">Content</div>
 
-  <img src="img/Ava2.png" alt="Alem Crypto Avatar" class="avatar">
+<div class="info-item">Crypto blogs and channels</div>
+<div class="info-item">Project reviews and articles</div>
+<div class="info-item">Educational Web3 content</div>
+
+</div>
+
+<div class="info-card">
+<div class="info-title">Mission</div>
+
+<p class="mission">
+Stay ahead of crypto trends, explore innovative technologies
+and build long-term value within the Web3 ecosystem.
+</p>
+
+</div>
+
+</div>
+</div>
+
+<img src="img/Ava2.png" alt="Alem Crypto Avatar" class="avatar">
+
 </section>
 
 <div class="particles"></div>
 
 <script>
+
 const container=document.querySelector('.particles');
+
 for(let i=0;i<40;i++){
-  const p=document.createElement('div');
-  p.className='particle';
-  p.style.left=Math.random()*100+'vw';
-  p.style.animationDuration=(Math.random()*6+6)+'s';
-  p.style.background=['#0ff','#ff00c8','#9b00ff'][Math.floor(Math.random()*3)];
-  container.appendChild(p);
+
+const p=document.createElement('div');
+
+p.className='particle';
+
+p.style.left=Math.random()*100+'vw';
+
+p.style.animationDuration=(Math.random()*6+6)+'s';
+
+p.style.background=['#0ff','#ff00c8','#9b00ff'][Math.floor(Math.random()*3)];
+
+container.appendChild(p);
+
 }
 
 const toggle=document.getElementById('menu-toggle');
+
 const nav=document.getElementById('nav');
+
 toggle.onclick=()=>nav.classList.toggle('active');
+
 document.querySelectorAll('nav a').forEach(a=>{
-  a.onclick=()=>nav.classList.remove('active');
+a.onclick=()=>nav.classList.remove('active');
 });
+
 </script>
 
 </body>
 </html>
-
