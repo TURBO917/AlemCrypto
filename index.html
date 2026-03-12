@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Alem.Crypto | Web3 Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">Alem.Crypto</div>
+
+<div class="menu-toggle" id="menu-toggle">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<nav id="nav">
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Projects</a>
+<a href="#">Contacts</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1 class="welcome">Welcome To My Portfolio</h1>
+
+<div class="text-box">
+
+<div class="info-card">
+<div class="info-title">Crypto Investor & Web3 Enthusiast</div>
+<p>
+Exploring early-stage blockchain projects, participating in testnets
+and discovering promising airdrops across the Web3 ecosystem.
+</p>
+</div>
+
+<div class="info-card">
+<div class="info-title">What I Do</div>
+
+<div class="info-item">Testnets and airdrop participation</div>
+<div class="info-item">Early-stage crypto investments</div>
+<div class="info-item">Portfolio strategy and management</div>
+<div class="info-item">Protocol and ecosystem research</div>
+
+</div>
+
+<div class="info-card">
+<div class="info-title">Content</div>
+
+<div class="info-item">Crypto blogs and channels</div>
+<div class="info-item">Project reviews and articles</div>
+<div class="info-item">Educational Web3 content</div>
+
+</div>
+
+<div class="info-card">
+<div class="info-title">Mission</div>
+
+<p class="mission">
+Stay ahead of crypto trends, explore innovative technologies
+and build long-term value within the Web3 ecosystem.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<img src="img/Ava2.png" alt="Alem Crypto Avatar" class="avatar">
+
+</section>
+
+<div class="particles"></div>
+
+<script>
+
+const container=document.querySelector('.particles');
+
+for(let i=0;i<40;i++){
+
+const p=document.createElement('div');
+
+p.className='particle';
+
+p.style.left=Math.random()*100+'vw';
+
+p.style.animationDuration=(Math.random()*6+6)+'s';
+
+p.style.background=['#0ff','#ff00c8','#9b00ff'][Math.floor(Math.random()*3)];
+
+container.appendChild(p);
+
+}
+
+const toggle=document.getElementById('menu-toggle');
+
+const nav=document.getElementById('nav');
+
+toggle.onclick=()=>nav.classList.toggle('active');
+
+document.querySelectorAll('nav a').forEach(a=>{
+a.onclick=()=>nav.classList.remove('active');
+});
+
+</script>
+
+</body>
+</html>
