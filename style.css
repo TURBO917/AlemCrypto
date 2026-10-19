@@ -631,5 +631,33 @@ nav a:hover::after{
   .wide-card {
     padding: 18px;
     margin-top: 16px;
-  }    
+  } 
+
+
+
+
+/* Wide card: same width as two regular cards */
+.wide-card-wrap {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 20px;
+  grid-column: 1 / -1;
+}
+
+.wide-card {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .wide-card-wrap {
+    margin-top: 16px;
+  }
+}
+
+
+
+
+  
 }
