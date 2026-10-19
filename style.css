@@ -594,4 +594,42 @@ nav a:hover::after{
     width:min(220px, 88vw);
     top:58px;
   }
+
+
+
+
+/* Wide standalone card */
+.wide-card {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 20px;
+  padding: 24px 28px;
+
+  background: rgba(15, 20, 40, 0.72);
+  border: 1px solid rgba(0, 255, 255, 0.35);
+  border-radius: 16px;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 0 15px rgba(0, 255, 255, 0.08),
+    inset 0 0 15px rgba(0, 255, 255, 0.025);
+}
+
+.wide-card .info-title {
+  margin-bottom: 12px;
+}
+
+.wide-card .card-text {
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .wide-card {
+    padding: 18px;
+    margin-top: 16px;
+  }    
 }
