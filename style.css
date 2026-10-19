@@ -595,3 +595,30 @@ nav a:hover::after{
     top:58px;
   }
 }
+
+.hall-of-shame {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    color: #e0e0e0;
+}
+
+.hall-of-shame h1 {
+    color: #ff4d4d;
+    text-transform: uppercase;
+}
+
+.hall-of-shame h2 {
+    color: #ffffff;
+}
+
+.hall-of-shame .highlight {
+    font-weight: bold;
+    color: #ff6b6b;
+}
+
+.hall-of-shame .closing {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    font-style: italic;
+}
